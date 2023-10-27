@@ -1,0 +1,26 @@
+#include "robot-config.h"
+
+// Declare and initialize robot variables
+brain vex_brain;
+competition vex_competition;
+controller vex_controller;
+/*
+extern motor dt_left_a;
+extern motor dt_right_b;
+extern motor_group Two_Motor_Drive;
+extern motor dt_left_c;
+*/
+// These are the 2 motor drivetrain motors
+motor dt_left_a = motor(PORT2, ratio18_1, true);
+motor dt_right_b = motor(PORT4, ratio18_1, true);
+motor dt_right_c = motor(PORT6, ratio18_1, true);
+motor dt_left_d = motor(PORT8, ratio18_1, true);
+motor_group dt_left = motor_group(dt_left_a, dt_right_b);
+motor_group dt_right = motor_group(dt_right_c, dt_left_d);
+drivetrain Four_Motor = drivetrain(dt_left,dt_right);
+
+
+
+motor C_Left = motor(PORT6, ratio18_1, true);
+motor C_right = motor(PORT8, ratio18_1, true);
+motor_group Claw = motor_group(C_Left, C_right);
